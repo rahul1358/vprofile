@@ -58,5 +58,6 @@ SOANRSCANNER='sonarscanner'
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
               }
             }
+          }
     }
 }
