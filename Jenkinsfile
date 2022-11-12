@@ -42,7 +42,7 @@ SOANRSCANNER='sonarscanner'
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-          stage('Sonar Analysis') {
+          stage('Sonar Analysis'){
             environment {
                 scannerHome = tool "${SONARSCANNER}"
             }
