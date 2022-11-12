@@ -13,11 +13,12 @@ NEXUS_PASS='1234'
 RELEASE_REPO='vprofile-release'
 CENTRAL_REPO='vpro-maven-central'
 NEXUSIP='172.31.27.163'
-NEXUSPORT='8081'
 NEXUS_GRP_REPO='vpro-maven-group'
 NEXUS_LOGIN='nexuslogin'
+NEXUSPORT='8081'
 SONARSERVER='sonarserver'
 SONARSCANNER='sonarscanner'
+
 }
  
     stages{
