@@ -12,7 +12,7 @@ NEXUS_USER= 'admin'
 NEXUS_PASS='1234'
 RELEASE_REPO='vprofile-release'
 CENTRAL_REPO='vpro-maven-central'
-NEXUSIP='172.31.19.81'
+NEXUSIP='172.31.27.163'
 NEXUSPORT='8081'
 NEXUS_GRP_REPO='vpro-maven-group'
 NEXUS_LOGIN='nexuslogin'
@@ -59,33 +59,33 @@ SONARSCANNER='sonarscanner'
               }
             }
           }
-          stage("Quality Gate") {
-            steps {
-                timeout(time: 1, unit: 'MINUTES') {
+        //  stage("Quality Gate") {
+          //  steps {
+            //    timeout(time: 1, unit: 'MINUTES') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
                     waitForQualityGate abortPipeline: true
-                }
-            }
-        }
-         stage("UploadArtifact"){
-            steps{
-                nexusArtifactUploader(
-                  nexusVersion: 'nexus3',
-                  protocol: 'http',
-                  nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
-                  groupId: 'QA',
-                  version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
-                  repository: "${RELEASE_REPO}",
-                  credentialsId: "${NEXUS_LOGIN}",
-                  artifacts: [
-                    [artifactId: 'vproapp',
-                     classifier: '',
-                     file: 'target/vprofile-v2.war',
-                     type: 'war']
-                  ]
-                )
-            }
-        }
+              //  }
+            //}
+        //}
+       //  stage("UploadArtifact"){
+         //   steps{
+           //     nexusArtifactUploader(
+             //     nexusVersion: 'nexus3',
+               //   protocol: 'http',
+                 // nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
+                  //groupId: 'QA',
+                 // version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
+                  //repository: "${RELEASE_REPO}",
+                  //credentialsId: "${NEXUS_LOGIN}",
+                  //artifacts: [
+                    //[artifactId: 'vproapp',
+                     //classifier: '',
+                     //file: 'target/vprofile-v2.war',
+                     //type: 'war']
+                  //]
+                //)
+           // }
+        //}
     }
 }
