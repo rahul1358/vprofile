@@ -7,7 +7,7 @@ pipeline {
     
     environment {
         SNAP_REPO = 'maven-snapshot'
-		NEXUS_USER = 'rahul'
+		NEXUS_USER = 'admin'
 		NEXUS_PASS = '1234'
 		RELEASE_REPO = 'maven-releases'
 		CENTRAL_REPO = 'maven-central'
