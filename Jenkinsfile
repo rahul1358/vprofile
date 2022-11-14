@@ -46,7 +46,8 @@ pipeline {
             steps {
                 sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
-	    }
+	  }
+
 	    stage('Sonar Analysis'){
             environment {
                 scannerHome = tool "${SONARSCANNER}"
@@ -63,6 +64,6 @@ pipeline {
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
               }
             }
-
+	    }
     }
 }
